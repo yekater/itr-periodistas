@@ -1,8 +1,9 @@
-# iTR+ — Curso de investigación digital para estudiantes
+# iTR+ — Curso de investigación digital para periodistas
 
-Landing page de la formación **iTR+ de investigación digital para estudiantes**, creada con [Astro](https://astro.build), React y TypeScript.
+Landing page de la formación **iTR+ de investigación digital para periodistas**, creada con [Astro](https://astro.build), React y TypeScript.
 
-- **100 % estática**: todo el contenido comercial esencial (hero, programa, FAQ, salidas laborales) funciona sin JavaScript.
+- **Publicada en GitHub Pages**: https://yekater.github.io/itr-periodistas/
+- **100 % estática**: todo el contenido comercial esencial (hero, programa, FAQ, salidas profesionales) funciona sin JavaScript.
 - **Multilingüe**: ES / CA / EN con detección del idioma del navegador en `/`.
 - **Datos centralizados**: el contenido vive en `src/data/` en lugar de estar repartido por los componentes.
 - **PDF real**: el programa descargable con 7 módulos y 38 lecciones se genera automáticamente en el build desde los mismos datos, siempre sincronizado con la web.
@@ -23,8 +24,8 @@ No se necesitan credenciales, claves ni variables de entorno para arrancar en lo
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/yekater/itr_students.git
-cd itr_students
+git clone https://github.com/yekater/itr-periodistas.git
+cd itr-periodistas
 
 # 2. Instalar dependencias
 npm ci        # o npm install si npm ci falla
@@ -102,7 +103,13 @@ El import es directo: la web consume esos objetos; no hay que buscar textos esco
 
 ## Despliegue
 
-`dist/` es el único directorio que debe publicarse. Copia `.env.example` a `.env` y configura el dominio real antes de desplegar a producción; el preview queda `noindex` por defecto para evitar indexación accidental.
+La web se despliega automáticamente en **GitHub Pages** con el workflow
+`.github/workflows/deploy-pages.yml` en cada push a `main`:
+
+- URL pública: **https://yekater.github.io/itr-periodistas/**
+- El workflow compila con `PUBLIC_SITE_URL=https://yekater.github.io/itr-periodistas`, `GITHUB_PAGES=true` (activa el base `/itr-periodistas` en `astro.config.mjs`) y ejecuta `node scripts/rewrite-base.mjs` para prefijar las rutas absolutas de `dist/`.
+
+Para publicar en un dominio propio, configura `PUBLIC_SITE_URL` con el dominio definitivo (el preview queda `noindex` por defecto para evitar indexación accidental).
 
 La documentación detallada del proyecto está en `docs/`:
 
