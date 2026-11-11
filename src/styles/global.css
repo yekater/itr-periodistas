@@ -157,8 +157,8 @@ li { margin-bottom: 8px; }
 .itr-contexto-grid hr { width: 100%; border: 0; border-top: 1px solid var(--context-grid-ink); margin: 24px 0 22px; }
 .itr-contexto-grid p { margin: 0; color: var(--context-grid-ink); font-size: var(--text-body); line-height: var(--leading-body); }
 .learning-grid article { position: relative; min-height: 280px; display: flex; flex-direction: column; justify-content: end; overflow: hidden; padding: 28px; color: white; background: linear-gradient(180deg, transparent 20%, rgba(11,31,58,.94) 100%), var(--learning-image) center / cover; border-radius: 8px; }
-.learning-grid article:nth-child(1) { --learning-image: url('/images/despacho-abogados-investigacion-digital-itr.jpg'); }
-.learning-grid article:nth-child(2) { --learning-image: url('/images/equipo-abogados-investigacion-digital-itr.jpg'); }
+.learning-grid article:nth-child(1) { --learning-image: url('/images/despacho-investigacion-digital-itr.jpg'); }
+.learning-grid article:nth-child(2) { --learning-image: url('/images/equipo-investigacion-digital-itr.jpg'); }
 .learning-grid article:nth-child(3) { --learning-image: url('/images/careers-legal-tech.jpg'); }
 .learning-grid article:nth-child(4) { --learning-image: url('/images/careers-professional.jpg'); }
 .learning-grid article:nth-child(5) { --learning-image: url('/images/careers-cybersecurity.jpg'); }
@@ -320,7 +320,7 @@ li { margin-bottom: 8px; }
 /* Método y programa */
 .learning-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 70px; }
 .learning-grid article { position: relative; isolation: isolate; min-height: 285px; overflow: hidden; border: 1px solid #587995; border-radius: 10px; padding: 24px; color: white; background: linear-gradient(145deg, #163a63, #0b1f3a); }
-.learning-grid article::before { content: ''; position: absolute; inset: 0; z-index: -2; background-image: var(--method-image, url('/images/equipo-abogados-investigacion-digital-itr.jpg')); background-position: center; background-size: cover; filter: saturate(.78); }
+.learning-grid article::before { content: ''; position: absolute; inset: 0; z-index: -2; background-image: var(--method-image, url('/images/equipo-investigacion-digital-itr.jpg')); background-position: center; background-size: cover; filter: saturate(.78); }
 .learning-grid article::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(7, 28, 52, .82), rgba(7, 28, 52, .42) 48%, rgba(7, 28, 52, .92)); }
 .learning-grid article:nth-child(1)::before { background-image: url('/images/metodologia-fuentes-abiertas.jpg'); }
 .learning-grid article:nth-child(2)::before { background-image: url('/images/competency-search.jpg'); }

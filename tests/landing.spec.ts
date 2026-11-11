@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const PDF='/downloads/programa-investigacion-digital-abogados.pdf';
+const PDF='/downloads/programa-investigacion-digital-periodistas.pdf';
 
 test('HTML completo, mapa de IDs y PDF sin JavaScript',async({browser,request})=>{
  const context=await browser.newContext({javaScriptEnabled:false});

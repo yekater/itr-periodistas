@@ -1,13 +1,14 @@
 from playwright.sync_api import sync_playwright
 
 CHECKS = {
-    '/':   ['Curso iTR+ de investigación digital para estudiantes', 'Matricularme', 'Alumnos que buscan prácticas',
-            'primer empleo', 'Dirigido a estudiantes', 'empleabilidad'],
-    '/ca/':['Curs iTR+ per a estudiants', 'Matricular-me', 'primer treball', 'ocupabilitat'],
-    '/en/':['iTR+ course for students', 'Enroll now', 'first job', 'employability'],
+    '/':   ['Curso iTR+ de investigación digital para periodistas', 'Matricularme', 'Dirigido a periodistas',
+            'verificación'],
+    '/ca/':['Curs iTR+ per a periodistes', 'Matricular-me', 'Adreçat a periodistes'],
+    '/en/':['iTR+ course for journalists', 'Enroll now', 'verification'],
 }
 BANNED = ['Contratar', 'Contractar', 'para abogados', 'per a advocats', 'course for lawyers',
-          'práctica jurídica', 'validez judicial', 'validesa judicial', 'judicial validity', 'Un despacho', 'despachos y']
+          'práctica jurídica', 'validez judicial', 'validesa judicial', 'judicial validity',
+          'para estudiantes', 'per a estudiants', 'for students', 'Un despacho', 'despachos y']
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
@@ -26,4 +27,3 @@ with sync_playwright() as p:
         print('  BANNED:', banned_hits if banned_hits else 'none', flush=True)
         page.screenshot(path='shots/verify' + route.replace('/', '_').rstrip('_') + '.png', full_page=True)
     browser.close()
-
